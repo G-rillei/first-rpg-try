@@ -115,7 +115,7 @@ class TimeAwareEntity extends Observer {
         this.name = name;
     }
 
-    update(data) {
+    onNotify(data) {
         console.log(`${this.name} detectou mudança de tempo:`, data);
         
         // Comportamentos diferentes baseados no período do dia

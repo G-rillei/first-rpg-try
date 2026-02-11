@@ -26,8 +26,8 @@ class Subject {
     // Notifica todos os observadores
     notifyObservers(data) {
         this.observers.forEach(observer => {
-            if (typeof observer.update === 'function') {
-                observer.update(data);
+            if (typeof observer.onNotify === 'function') {
+                observer.onNotify(data);
             }
         });
     }
@@ -35,7 +35,7 @@ class Subject {
 
 // Interface para Observers (não é necessário em JS, mas é uma boa prática)
 class Observer {
-    update(data) {
-        throw new Error('Observer.update() deve ser implementado');
+    onNotify(data) {
+        throw new Error('Observer.onNotify() deve ser implementado');
     }
 }
