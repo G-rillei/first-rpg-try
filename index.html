@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG 2D - Top Down</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Header com informações do jogo -->
+        <div id="game-header">
+            <h1>RPG Adventure</h1>
+            <div id="time-display">
+                <span id="time-icon">☀️</span>
+                <span id="time-text">Manhã</span>
+            </div>
+        </div>
+
+        <!-- Container principal do jogo -->
+        <div id="main-game">
+            <!-- Canvas do jogo -->
+            <canvas id="game-canvas"></canvas>
+
+            <!-- HUD (Health, Mana, Stamina) -->
+            <div id="hud">
+                <div class="stat-bar-container">
+                    <div class="stat-label">
+                        <span>❤️ Vida</span>
+                        <span id="health-text">100/100</span>
+                    </div>
+                    <div class="stat-bar">
+                        <div id="health-bar" class="bar health-bar"></div>
+                    </div>
+                </div>
+
+                <div class="stat-bar-container">
+                    <div class="stat-label">
+                        <span>💧 Mana</span>
+                        <span id="mana-text">100/100</span>
+                    </div>
+                    <div class="stat-bar">
+                        <div id="mana-bar" class="bar mana-bar"></div>
+                    </div>
+                </div>
+
+                <div class="stat-bar-container">
+                    <div class="stat-label">
+                        <span>⚡ Stamina</span>
+                        <span id="stamina-text">100/100</span>
+                    </div>
+                    <div class="stat-bar">
+                        <div id="stamina-bar" class="bar stamina-bar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controles -->
+            <div id="controls">
+                <div class="control-info">
+                    <h3>Controles</h3>
+                    <p><strong>WASD</strong> - Mover</p>
+                    <p><strong>Shift</strong> - Correr</p>
+                    <p><strong>Espaço</strong> - Atacar</p>
+                    <p><strong>I</strong> - Inventário</p>
+                    <p><strong>E</strong> - Usar Item</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inventário (oculto por padrão) -->
+        <div id="inventory-panel" class="hidden">
+            <div class="panel-header">
+                <h2>Inventário</h2>
+                <button id="close-inventory" class="close-btn">✕</button>
+            </div>
+            <div class="panel-content">
+                <div class="inventory-section">
+                    <h3>Armas</h3>
+                    <div id="weapons-list" class="inventory-grid"></div>
+                </div>
+                <div class="inventory-section">
+                    <h3>Equipamentos</h3>
+                    <div id="equipment-list" class="inventory-grid"></div>
+                </div>
+                <div class="inventory-section">
+                    <h3>Consumíveis</h3>
+                    <div id="consumables-list" class="inventory-grid"></div>
+                </div>
+                <div class="inventory-section">
+                    <h3>Itens</h3>
+                    <div id="items-list" class="inventory-grid"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/observer.js"></script>
+    <script src="js/dayNightCycle.js"></script>
+    <script src="js/inventory.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
